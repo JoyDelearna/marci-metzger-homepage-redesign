@@ -1,8 +1,118 @@
 /* Custom styles will go here */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Playfair Display', serif;
+    color: #2B2B2B;
 }
 
-body, p, span, a, li {
+body,
+p,
+a,
+li {
     font-family: 'Lora', serif;
+    color: #15293C;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-family: 'Playfair Display', serif;
+    color: #15293C;
+    justify-content: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+    /* space between logo and text */
+    transition: transform 0.3s ease;
+}
+
+.logo-link-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-title {
+    transition: transform 0.3s ease;
+}
+
+.logo-line {
+    display: block;
+    width: 50%;
+    /* initial line width */
+    height: 2px;
+    background-color: #CE9D42;
+    margin: 2px 0;
+    /* spacing above and below line */
+    transition: width 0.8s ease;
+}
+
+.logo-subtitle {
+    font-size: 1rem;
+    transition: transform 0.1s ease;
+}
+
+.logo-subtitle p {
+    margin: 0;
+    /* Removes all default margins from the Homes paragraph */
+    padding: 0;
+    /* Optional: also remove any padding just in case */
+}
+
+.navbar-brand:hover .logo-line {
+    width: 100%;
+    /* line expands to full width */
+}
+
+.nav-underline {
+    display: inline-block;
+    /* important: line aligns with text */
+    position: relative;
+    color: #607D8B;
+    /* inactive color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding-bottom: 4px;
+    /* space for the line */
+}
+
+.nav-underline .nav-line {
+    display: block;
+    height: 2px;
+    width: 0%;
+    background-color: #CE9D42;
+    transition: width 0.3s ease;
+    margin-top: 2px;
+    /* small spacing from text */
+}
+
+/* Active link */
+.nav-underline.active {
+    color: #15293C !important;
+}
+
+.nav-underline.active .nav-line {
+    width: 50% !important;
+    /* initial active line width */
+}
+
+/* Hover effects */
+.nav-underline:hover {
+    color: #607D8B;
+}
+
+.nav-underline:hover .nav-line {
+    width: 50%;
+    /* hover for inactive links */
+}
+
+/* Hover animation for active link */
+.nav-underline.active:hover .nav-line {
+    width: 100%;
 }
