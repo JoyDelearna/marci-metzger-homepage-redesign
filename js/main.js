@@ -1,8 +1,39 @@
 // =====================================================================
-// --------------- NAVBAR JS -------------------------------------------
+// --------------- LOAD COMPONENTS --------------------------------------
 // =====================================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+function loadComponents() {
+  return Promise.all([
+      inject("navbar-container", "components/navbar.html"),
+      inject("achievement-container", "components/achievement.html"),
+      inject("contact-container", "components/contact.html"),
+      inject("footer-container", "components/footer.html"),
+    ])
+    .then(() => {
+      console.log("Components Loaded");
+
+      // Must run AFTER components exist
+      initSwiper();
+      setupGoldLineAnimation();
+      setupNavbarHoverState();
+    })
+    .catch(err => console.error("Component Load Error:", err));
+}
+
+function inject(id, url) {
+  return fetch(url)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById(id).innerHTML = html;
+    });
+}
+
+
+// =====================================================================
+// --------------- NAVBAR ACTIVE LINK ----------------------------------
+// =====================================================================
+
+function setupNavbarHoverState() {
   const navLinks = document.querySelectorAll('.nav-underline');
 
   navLinks.forEach(link => {
@@ -12,36 +43,31 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.add('active');
     });
   });
-
-  // Load components after DOM is ready
-  loadComponents();
-});
-
-
-// =====================================================================
-// --------------- LOAD COMPONENTS (NAVBAR, CONTACT, FOOTER) ------------
-// =====================================================================
-
-function loadComponents() {
-  Promise.all([
-      inject("navbar-container", "components/navbar.html"),
-      inject("contact-container", "components/contact.html"),
-      inject("footer-container", "components/footer.html"),
-    ])
-    .then(() => {
-      console.log("Components Loaded");
-      setupGoldLineAnimation();
-    })
-    .catch(err => console.error("Component Load Error:", err));
 }
 
-function inject(id, url) {
-  return fetch(url)
-    .then(res => res.text())
-    .then(html => {
-      const container = document.getElementById(id);
-      container.innerHTML = html;
-    });
+
+// =====================================================================
+// ---------------------- ACHIEVEMENT SWIPER ----------------------------
+// =====================================================================
+
+function initSwiper() {
+  const swiperElement = document.querySelector(".mySwiper");
+  if (!swiperElement) {
+    console.warn("Swiper container not found!");
+    return;
+  }
+
+  new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 }
 
 
@@ -64,3 +90,12 @@ function setupGoldLineAnimation() {
 
   observer.observe(goldLine);
 }
+
+
+// =====================================================================
+// --------------- DOM READY → LOAD EVERYTHING --------------------------
+// =====================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadComponents(); // load HTML components
+});

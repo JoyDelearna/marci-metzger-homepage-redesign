@@ -138,6 +138,58 @@ li {
 /* Search css ends here */
 
 /* achievement css start here */
+.achievement-section {
+    background: #f7f7f7;
+    padding: 70px 0;
+}
+
+/* Swiper container */
+.swiper {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Slide heading */
+.swiper-slide h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: #1a2a38;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Slide text */
+.swiper-slide p {
+    font-family: "Lora", serif;
+    max-width: 700px;
+    margin: 0 auto 10px;
+    line-height: 1.7;
+    font-size: 17px;
+    color: #2f3c49;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #c7c7c7;
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 5px !important;
+    transition: all 0.3s ease;
+}
+
+/* Active Pagination — elongated gold pill */
+.swiper-pagination-bullet-active {
+    width: 28px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #b38b37;
+}
+
 /* achievement css ends here */
 
 /* contact css start here */
