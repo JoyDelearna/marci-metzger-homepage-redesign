@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("navbar-container").innerHTML = data;
         });
 
+    // Load Navbar
+    fetch("components/contact.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("contact-container").innerHTML = data;
+        });
+
     // Load Footer
     fetch("components/footer.html")
         .then(response => response.text())
