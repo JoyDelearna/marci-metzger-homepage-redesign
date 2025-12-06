@@ -54,9 +54,17 @@
 
                     <!-- ROW 3 -->
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-md-8">
                             <button class="paragraph button gold-text w-100" id="searchBtn">Search Now</button>
                         </div>
+                        <div class="col-md-4 mt-3 mt-md-0">
+                            <button class="paragraph gold-text button w-100" id="resetBtn">Reset Filters</button>
+                        </div>
+                    </div>
+
+                    <!-- RESULT COUNT TEXT -->
+                    <div class="text-center mt-4">
+                        <p id="resultCount" class="paragraph white-text"></p>
                     </div>
 
                 </div>
@@ -66,6 +74,7 @@
 
         <!-- LISTINGS -->
         <div class="row g-4" id="listingContainer"></div>
+        <div id="resultCount"></div>
 
     </div>
 </section>

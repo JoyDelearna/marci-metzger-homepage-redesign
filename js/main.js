@@ -7,7 +7,7 @@ function loadComponents() {
     inject("navbar-container", "components/navbar.html"),
     inject("about-container", "components/about.html"),
     inject("achievement-container", "components/achievement.html"),
-    inject("search-container", "components/search.html"),
+    inject("search-container", "components/search.html", initSearchSystem),
     inject("alliance-container", "components/alliances.html"),
     inject("contact-container", "components/contact.html"),
     inject("footer-container", "components/footer.html"),
@@ -30,12 +30,38 @@ function loadComponents() {
   });
 }
 
-function inject(id, url) {
+// Updated inject() — now supports callback!
+function inject(id, url, callback) {
   return fetch(url)
     .then(res => res.text())
     .then(html => {
       document.getElementById(id).innerHTML = html;
+      if (typeof callback === "function") callback(); // <-- now works
     });
+}
+
+// =====================================================================
+// SEARCH ALL INITIALIZATION
+// =====================================================================
+
+function initSearchSystem() {
+  displayListings(listings);
+
+  document.getElementById("searchBtn").onclick = handleSearch;
+  document.getElementById("resetBtn").onclick = resetFilters;
+}
+
+function resetFilters() {
+  document.getElementById("location").value = "all";
+  document.getElementById("type").value = "all";
+  document.getElementById("bedrooms").value = "any";
+  document.getElementById("baths").value = "any";
+  document.getElementById("minPrice").value = "";
+  document.getElementById("maxPrice").value = "";
+  document.getElementById("sortBy").value = "default";
+
+  displayListings(listings);
+  document.getElementById("resultCount").textContent = "";
 }
 
 // =====================================================================
@@ -335,20 +361,23 @@ function handleSearch() {
     return true;
   });
 
-  // SORTING
-  if (sort === "low") results.sort((a, b) => getNumber(a.price) - getNumber(b.price));
-  if (sort === "high") results.sort((a, b) => getNumber(b.price) - getNumber(a.price));
+  // Sorting
+  if (sortBy === "low") results.sort((a, b) => a.price - b.price);
+  if (sortBy === "high") results.sort((a, b) => b.price - a.price);
+  if (sortBy === "newest") results.reverse();
 
-  // If no result → show message
-  if (results.length === 0) {
-    displayListings([]); // Clear list
-    document.getElementById("listingContainer").innerHTML =
-      `<p style="text-align:center; font-size:1.2rem; padding:40px 0; color:#5C6B75;">No Listing Found</p>`;
+  // No results
+  if (!results.length) {
+    document.getElementById("listingContainer").innerHTML = `<p class="text-center py-5" style="font-size:18px;color:#ccc">No Listing Found</p>`;
+    document.getElementById("resultCount").innerHTML = `0 properties found`;
     return;
   }
 
   displayListings(results);
 
+  // Show Result Count
+  document.getElementById("resultCount").innerHTML =
+    `<span class="gold-text">${results.length}</span> properties found`;
 }
 
 // =====================================================================
