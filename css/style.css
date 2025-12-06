@@ -6,7 +6,6 @@ h4,
 h5,
 h6 {
     font-family: 'Playfair Display', serif;
-    color: #2B2B2B;
 }
 
 body,
@@ -17,6 +16,15 @@ li {
     color: #15293C;
 }
 
+.gold-text {
+    color: #CE9D42;
+}
+
+.blue-text {
+    color: #15293C;
+}
+
+/* navbar css start here */
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -116,3 +124,30 @@ li {
 .nav-underline.active:hover .nav-line {
     width: 100%;
 }
+
+/* navbar css ends here */
+
+/* footer css start here */
+.footer-brand {
+    gap: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* Logo sizing */
+.footer-logo {
+    width: 60px;
+    height: auto;
+    /* preserves aspect ratio */
+    display: block;
+}
+
+/* Title styling (move inline styles into CSS) */
+.footer-title {
+    color: #c89758;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    /* adjust size if needed */
+}
+
+/* footer css ends here */
