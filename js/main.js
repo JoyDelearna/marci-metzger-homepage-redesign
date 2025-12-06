@@ -97,8 +97,8 @@ function displayListings(items) {
         <div class="card listing-card shadow-sm border-0 open-gallery" data-folder="${item.folder}">
             <img src="${cover}" class="card-img-top" alt="${item.title}">
             <div class="card-body">
-                <h5 class="property-price gold-text title">$${item.price.toLocaleString()}</h5>
-                <p class="light-blue-text paragraph mb-2">${item.address}</p>
+                <h5 class="property-price gold-text paragraph">$${item.price.toLocaleString()}</h5>
+                <p class="light-blue-text paragraph-2 mb-2">${item.address}</p>
                 <p class="property-details small text-muted">${item.details}</p>
             </div>
         </div>
