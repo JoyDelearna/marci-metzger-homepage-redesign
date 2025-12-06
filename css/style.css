@@ -263,6 +263,47 @@ li {
     gap: 40px;
 }
 
+/* ----------------------------------------------------
+   SEARCH SECTION
+---------------------------------------------------- */
+.search-section {
+    background: #0B1620;
+    color: white;
+    padding: 70px 0;
+    position: relative;
+}
+
+/* ----------------------------------------------------
+   ALLIANCE SECTION
+---------------------------------------------------- */
+.alliance-section {
+    background: white;
+    padding: 70px 0;
+    position: relative;
+}
+
+.affi-logo-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.affi-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 500px;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.affi-logo img {
+    height: 8rem;
+    width: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+
 
 /* ----------------------------------------------------
    CONTACT SECTION
