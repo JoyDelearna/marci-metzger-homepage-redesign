@@ -13,15 +13,19 @@ p,
 a,
 li {
     font-family: 'Lora', serif;
-    color: #15293C;
+    color: #0B1620;
 }
 
 .gold-text {
-    color: #CE9D42;
+    color: #D4B26D;
 }
 
 .blue-text {
-    color: #15293C;
+    color: #0B1620;
+}
+
+.light-blue-text {
+    color: #5C6B75;
 }
 
 /* navbar css start here */
@@ -29,7 +33,7 @@ li {
     display: flex;
     align-items: center;
     font-family: 'Playfair Display', serif;
-    color: #15293C;
+    color: #0B1620;
     justify-content: center;
 }
 
@@ -55,7 +59,7 @@ li {
     width: 50%;
     /* initial line width */
     height: 2px;
-    background-color: #CE9D42;
+    background-color: #D4B26D;
     margin: 2px 0;
     /* spacing above and below line */
     transition: width 0.8s ease;
@@ -94,7 +98,7 @@ li {
     display: block;
     height: 2px;
     width: 0%;
-    background-color: #CE9D42;
+    background-color: #D4B26D;
     transition: width 0.3s ease;
     margin-top: 2px;
     /* small spacing from text */
@@ -102,7 +106,7 @@ li {
 
 /* Active link */
 .nav-underline.active {
-    color: #15293C !important;
+    color: #0B1620 !important;
 }
 
 .nav-underline.active .nav-line {
@@ -126,6 +130,71 @@ li {
 }
 
 /* navbar css ends here */
+
+/* affiliation css start here */
+/* affiliation css ends here */
+
+/* Search css start here */
+/* Search css ends here */
+
+/* achievement css start here */
+/* achievement css ends here */
+
+/* contact css start here */
+.contact-section {
+    background: #0B1620;
+    color: white;
+    padding: 70px 0;
+    position: relative;
+}
+
+/* GOLD LINE */
+.gold-line {
+    height: 5px;
+    width: 10px;
+    background: #D4B26D;
+    margin: 0 auto 25px auto;
+    border-radius: 2px;
+    transition: width 0.8s ease;
+}
+
+.gold-line.animate {
+    width: 360px;
+}
+
+/* TEXTS */
+.contact-title {
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.7px;
+}
+
+.contact-subtext {
+    font-size: 17px;
+    opacity: 0.85;
+    margin-bottom: 28px;
+}
+
+/* BUTTON */
+.contact-btn {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 2px solid #D4B26D;
+    background: transparent;
+    border-radius: 6px;
+    font-family: 'Lora', serif;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.contact-btn:hover {
+    background: #D4B26D;
+    color: #0B1620;
+}
+
+/* contact css ends here */
 
 /* footer css start here */
 .footer-brand {
