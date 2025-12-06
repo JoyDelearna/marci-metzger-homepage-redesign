@@ -59,9 +59,11 @@ function initSwiper() {
 
   new Swiper(".mySwiper", {
     loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
     autoplay: {
-      delay: 3500,
-      disableOnInteraction: false,
+      delay: 4500,
+      disableOnInteraction: true,
     },
     pagination: {
       el: ".swiper-pagination",
