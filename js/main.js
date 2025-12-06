@@ -5,6 +5,7 @@
 function loadComponents() {
   return Promise.all([
       inject("navbar-container", "components/navbar.html"),
+      inject("about-container", "components/about.html"),
       inject("achievement-container", "components/achievement.html"),
       inject("contact-container", "components/contact.html"),
       inject("footer-container", "components/footer.html"),
