@@ -268,10 +268,120 @@ li {
 ---------------------------------------------------- */
 .search-section {
     background: #0B1620;
+    /* KEEPING YOUR ORIGINAL COLOR */
     color: white;
     padding: 70px 0;
-    position: relative;
 }
+
+/* Modern unified height & style */
+.modern-input {
+    background-color: #13212E;
+    color: white;
+    border: 1px solid #2C3A46;
+    height: 55px;
+    padding-left: 15px;
+    border-radius: 0.6rem;
+    transition: 0.3s;
+}
+
+/* Input focus glow */
+.modern-input:focus {
+    border-color: #D4B26A;
+    box-shadow: 0 0 0 0.15rem rgba(212, 178, 106, 0.3);
+}
+
+/* Placeholder color */
+.modern-input::placeholder {
+    color: #9ca8b6;
+}
+
+/* Listing cards */
+.listing-card {
+    transition: 0.3s ease;
+    border-radius: 0.8rem;
+}
+
+.listing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.property-price {
+    font-weight: 700;
+}
+
+.property-details {
+    font-size: 0.95rem;
+}
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gallery-main {
+    display: contents;
+}
+
+.gallery-main img {
+    width: 60%;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-thumb-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* Default: thumbnails black & white */
+.gallery-thumb-container img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: .7;
+    transition: .3s;
+}
+
+/* Active / Selected thumbnail */
+.gallery-thumb-container img.active-thumb {
+    filter: grayscale(0);
+    opacity: 1;
+    border: 2px solid #D4B26D;
+}
+
+
+.gallery-thumb-container img:hover {
+    opacity: 1;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.card-img-top {
+    height: 380px;
+}
+
+
 
 /* ----------------------------------------------------
    ALLIANCE SECTION
