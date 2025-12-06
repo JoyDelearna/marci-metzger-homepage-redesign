@@ -4,14 +4,16 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.achieve-item-big .achieve-number {
     font-family: 'Playfair Display', serif;
 }
 
 body,
 p,
 a,
-li {
+li,
+.achieve-desc {
     font-family: 'Lora', serif;
     color: #0B1620;
 }
@@ -138,6 +140,94 @@ li {
 /* Search css ends here */
 
 /* achievement css start here */
+/* Achievement Section */
+.achievement-section {
+    background: #f7f7f7;
+    padding: 70px 0;
+}
+
+/* Swiper container */
+.swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    overflow: hidden;
+    /* <-- prevents slide spill */
+}
+
+/* FORCE each slide to take full width */
+.swiper-wrapper {
+    width: 100%;
+}
+
+.swiper-slide {
+    width: 100% !important;
+    /* <-- the REAL fix */
+    box-sizing: border-box;
+    padding: 20px;
+    /* keeps spacing consistent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Title */
+.achieve-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 4rem;
+}
+
+/* Text */
+.swiper-slide p {
+    max-width: 800px;
+    margin: 0 auto 10px;
+    line-height: 1.7;
+}
+
+/* Pagination Dots */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #c7c7c7;
+    opacity: 1;
+    border-radius: 50%;
+    margin: 0 5px !important;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 40px;
+    height: 10px;
+    border-radius: 20px;
+    background-color: #b38b37;
+}
+
+/* Stats inside slide */
+.achieve-item-big i {
+    font-size: 3rem !important;
+}
+
+.achieve-item-big .achieve-number {
+    font-weight: 1000;
+    font-size: 3rem;
+}
+
+.achieve-item-big .achieve-label {
+    font-size: 1.5rem;
+    color: #5C6B75;
+}
+
+.achieve-desc {
+    font-size: 1.5rem;
+}
+
+.achieve-icons {
+    gap: 60px;
+}
+
 /* achievement css ends here */
 
 /* contact css start here */
