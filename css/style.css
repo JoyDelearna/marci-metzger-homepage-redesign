@@ -19,6 +19,11 @@ li {
     color: #0B1620;
 }
 
+html,
+body {
+    forced-color-adjust: none !important;
+}
+
 .title {
     font-size: 4rem;
     font-weight: 500;
@@ -708,5 +713,27 @@ li {
 
     .button {
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-text .button {
+        display: block;
+        margin: 25px auto 0 auto;
+        text-align: center;
+        width: fit-content;
+    }
+}
+
+/* Mobile fix for .logo ONLY inside achievement items */
+@media (max-width: 480px) {
+    .achieve-item i.logo {
+        font-size: 1.6rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .achieve-item i.logo {
+        font-size: 1.4rem !important;
     }
 }
