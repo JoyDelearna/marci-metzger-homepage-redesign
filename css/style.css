@@ -1,6 +1,35 @@
-/* ----------------------------------------------------
-   GLOBAL TYPOGRAPHY & COLORS
----------------------------------------------------- */
+/* =====================================================================
+   🎨 CSS VARIABLES (Theming)
+===================================================================== */
+:root {
+    /* Primary Colors */
+    --color-dark: #0B1620;
+    /* Deep Blue/Black - Backgrounds, Primary Text */
+    --color-light: #FFFFFF;
+    /* White - Backgrounds */
+    --color-gold: #D4B26D;
+    /* Accent Gold */
+    --color-light-blue: #5C6B75;
+    /* Grayish Blue - Subtext, Details */
+    --color-medium-blue: #607D8B;
+    /* Medium Blue - Secondary Link/Hover */
+    --color-bg-light: #f7f7f7;
+    /* Light Gray Background */
+    --color-bg-dark: #13212E;
+    /* Darker Blue/Gray - Input backgrounds */
+    --color-border-dark: #2C3A46;
+    /* Border for dark elements */
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+}
+
+/* =====================================================================
+   🌎 GLOBAL STYLES & TYPOGRAPHY
+===================================================================== */
+
+/* Base Font Families */
 h1,
 h2,
 h3,
@@ -8,22 +37,24 @@ h4,
 h5,
 h6,
 .achieve-item-big .achieve-number {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
 }
 
 body,
 p,
 a,
 li {
-    font-family: 'Lora', serif;
-    color: #0B1620;
+    font-family: var(--font-body);
+    color: var(--color-dark);
 }
 
 html,
 body {
+    /* Disable forced color adjustments for better theme control */
     forced-color-adjust: none !important;
 }
 
+/* Base Font Sizes */
 .title {
     font-size: 4rem;
     font-weight: 500;
@@ -38,54 +69,50 @@ body {
     font-size: 1rem;
 }
 
-
-.button {
-    display: inline-block;
-    padding: 10px 40px;
-    border: 2px solid #D4B26D;
-    background: transparent;
-    border-radius: 6px;
-    letter-spacing: 1px;
-    transition: 0.3s ease;
-    text-decoration: none;
-}
-
-.button:hover {
-    background: #D4B26D;
-    color: #0B1620;
-}
-
-.logo {
-    font-size: 3rem !important;
-}
-
+/* Utility Colors */
 .blue-text {
-    color: #0B1620;
+    color: var(--color-dark);
 }
 
 .light-blue-text {
-    color: #5C6B75;
+    color: var(--color-light-blue);
 }
 
 .white-text {
-    color: white;
+    color: var(--color-light);
 }
 
 .gold-text {
-    color: #D4B26D;
+    color: var(--color-gold);
+}
+
+/* Primary Button Style */
+.button {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 2px solid var(--color-gold);
+    background: transparent;
+    border-radius: 6px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background: var(--color-gold);
+    color: var(--color-dark);
 }
 
 
+/* =====================================================================
+   🗺️ NAVBAR STYLES
+===================================================================== */
 
-
-/* ----------------------------------------------------
-   NAVBAR
----------------------------------------------------- */
 .navbar-brand {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #0B1620;
+    color: var(--color-dark);
 }
 
 .navbar-logo {
@@ -94,6 +121,7 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Brand Text Sub-elements */
 .logo-link-text {
     display: flex;
     flex-direction: column;
@@ -104,7 +132,7 @@ body {
     display: block;
     width: 50%;
     height: 2px;
-    background-color: #D4B26D;
+    background-color: var(--color-gold);
     margin: 2px 0;
     transition: width 0.8s ease;
 }
@@ -113,17 +141,12 @@ body {
     width: 100%;
 }
 
-.logo-subtitle p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Nav underline */
+/* Navigation Links (Custom Underline Effect) */
 .nav-underline {
     position: relative;
     display: inline-block;
     padding-bottom: 4px;
-    color: #607D8B;
+    color: var(--color-medium-blue);
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -132,21 +155,23 @@ body {
     display: block;
     width: 0%;
     height: 2px;
-    background-color: #D4B26D;
+    background-color: var(--color-gold);
     margin-top: 2px;
     transition: width 0.3s ease;
 }
 
+/* Active State */
 .nav-underline.active {
-    color: #0B1620 !important;
+    color: var(--color-dark) !important;
 }
 
 .nav-underline.active .nav-line {
     width: 50% !important;
 }
 
+/* Hover States */
 .nav-underline:hover {
-    color: #607D8B;
+    color: var(--color-medium-blue);
 }
 
 .nav-underline:hover .nav-line {
@@ -157,10 +182,25 @@ body {
     width: 100%;
 }
 
+/* Toggler Styles (Bootstrap override) */
+.navbar-toggler {
+    border-color: var(--color-gold) !important;
+}
 
-/* ----------------------------------------------------
-   ABOUT SECTION (REVISED - CLEAN & PREMIUM)
----------------------------------------------------- */
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+/* Custom Toggler Icon SVG Color */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23D4B26D' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+
+/* =====================================================================
+   👤 ABOUT SECTION
+===================================================================== */
+
 .about-section {
     position: relative;
     overflow: visible !important;
@@ -168,23 +208,19 @@ body {
 
 .container-about {
     position: relative;
-    background: #0B1620;
-    padding: 50px 150px 50px 150px;
+    background: var(--color-dark);
+    padding: 50px 150px;
 }
 
-/* Text */
-.about-text {
-    width: 50%;
-    padding-right: 120px;
-}
-
-/* Image overlap */
+/* Image & Frame Positioning */
 .about-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: relative;
     z-index: 2;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
 }
 
 .gold-frame {
@@ -193,16 +229,9 @@ body {
     left: -25px;
     width: 100%;
     height: 100%;
-    border: 5px solid #D4B26D;
+    border: 5px solid var(--color-gold);
     z-index: 1;
-    transition: .4s ease;
-}
-
-.about-img {
-    border-radius: 10px;
-    position: relative;
-    z-index: 2;
-    transition: .4s ease;
+    transition: top 0.4s ease, left 0.4s ease;
 }
 
 /* Hover depth effect */
@@ -215,8 +244,290 @@ body {
     left: -30px;
 }
 
-/* Mobile responsiveness */
+
+/* =====================================================================
+   🏆 ACHIEVEMENT SECTION
+===================================================================== */
+
+.achievement-section {
+    background: var(--color-bg-light);
+    padding: 70px 0;
+}
+
+/* Swiper Container */
+.swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 60px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #c7c7c7;
+    /* Custom light gray */
+    opacity: 1;
+    transition: background 0.3s ease, width 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 40px;
+    height: 10px;
+    border-radius: 20px;
+    background: #b38b37;
+    /* Slightly darker gold */
+}
+
+/* Achievement Numbers */
+.achieve-item-big .achieve-number {
+    font-size: 3rem;
+    font-weight: 1000;
+}
+
+.achieve-item-big .achieve-label {
+    font-size: 1.5rem;
+    color: var(--color-light-blue);
+}
+
+.achieve-icons {
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+
+/* =====================================================================
+   🔍 SEARCH & LISTINGS
+===================================================================== */
+
+.search-section {
+    background: var(--color-dark);
+    color: white;
+    padding: 70px 0;
+}
+
+/* Search Input Styling */
+.modern-input {
+    background-color: var(--color-bg-dark);
+    color: var(--color-light);
+    border: 1px solid var(--color-border-dark);
+    height: 55px;
+    padding-left: 15px;
+    border-radius: 0.6rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus glow */
+.modern-input:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 0.15rem rgba(212, 178, 106, 0.3);
+}
+
+.modern-input::placeholder {
+    color: #9ca8b6;
+    /* Lighter text for placeholder */
+}
+
+/* Listing Card Styles */
+.listing-card {
+    border-radius: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.listing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.property-price {
+    font-weight: 700;
+}
+
+.property-details {
+    font-size: 0.95rem;
+}
+
+/* Listing Image Aspect Ratio */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 12;
+    /* Default aspect ratio for desktop */
+}
+
+/* --- Gallery Modal Styles --- */
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.gallery-main {
+    /* Uses display: contents to let the child image take up the flex space */
+    display: contents;
+}
+
+.gallery-main img {
+    width: 60%;
+    max-height: 70vh;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery-thumb-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.gallery-thumb-container img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    opacity: .7;
+    transition: filter 0.3s, opacity 0.3s, border 0.3s;
+}
+
+/* Active / Selected thumbnail */
+.gallery-thumb-container img.active-thumb {
+    filter: grayscale(0);
+    opacity: 1;
+    border: 2px solid var(--color-gold);
+}
+
+.gallery-thumb-container img:hover {
+    opacity: 1;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* =====================================================================
+   🤝 ALLIANCE SECTION (Logo Scroller)
+===================================================================== */
+
+.alliance-section {
+    background: var(--color-light);
+    padding: 70px 0;
+    position: relative;
+}
+
+.affi-logo-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.affi-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 500px;
+    /* Large gap between logos */
+    white-space: nowrap;
+    will-change: transform;
+    /* Performance hint for animation */
+}
+
+.affi-logo img {
+    height: 8rem;
+    width: auto;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+/* =====================================================================
+   📞 CONTACT SECTION (CTA)
+===================================================================== */
+
+.contact-section {
+    background: var(--color-dark);
+    color: white;
+    padding: 70px 0;
+    position: relative;
+}
+
+/* Gold divider line animation */
+.gold-line {
+    height: 5px;
+    width: 10px;
+    background: var(--color-gold);
+    margin: 0 auto 25px;
+    border-radius: 2px;
+    transition: width 0.8s ease;
+}
+
+.gold-line.animate {
+    width: 360px;
+}
+
+
+/* =====================================================================
+   📝 FOOTER
+===================================================================== */
+.footer-logo {
+    width: 2rem;
+}
+
+/* =====================================================================
+   📱 MEDIA QUERIES (RESPONSIVENESS)
+===================================================================== */
+
+/* --- General Desktop/Large Tablet Adjustments (Max 1720px) --- */
+@media (max-width: 1720px) {
+    .container-about {
+        padding: 30px;
+    }
+}
+
+/* --- Tablet/Small Desktop (Max 992px) --- */
 @media (max-width: 992px) {
+
+    /* Typography */
+    .title,
+    .achieve-title {
+        font-size: 3rem;
+    }
+
+    .paragraph {
+        font-size: 1.3rem;
+    }
+
+    .button {
+        padding: 8px 30px;
+        font-size: 1rem;
+    }
+
+    /* About Section Overrides */
     .container-about {
         padding: 0 20px;
     }
@@ -242,375 +553,83 @@ body {
         top: -25px;
         left: 55px;
     }
-}
 
-
-
-/* ----------------------------------------------------
-   ACHIEVEMENT SECTION
----------------------------------------------------- */
-.achievement-section {
-    background: #f7f7f7;
-    padding: 70px 0;
-}
-
-/* Swiper */
-.swiper {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    padding-bottom: 60px;
-    overflow: hidden;
-}
-
-.swiper-wrapper {
-    width: 100%;
-}
-
-.swiper-slide {
-    width: 100% !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Title */
-.achieve-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-/* Paragraph */
-.swiper-slide p {
-    max-width: 800px;
-    margin: 0 auto 10px;
-    line-height: 1.7;
-}
-
-/* Pagination */
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-    background: #c7c7c7;
-    border-radius: 50%;
-    margin: 0 5px !important;
-    transition: 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-    width: 40px;
-    height: 10px;
-    border-radius: 20px;
-    background: #b38b37;
-}
-
-.achieve-item-big .achieve-number {
-    font-size: 3rem;
-    font-weight: 1000;
-}
-
-.achieve-item-big .achieve-label {
-    font-size: 1.5rem;
-    color: #5C6B75;
-}
-
-.achieve-icons {
-    flex-wrap: wrap;
-    gap: 40px;
-}
-
-/* ----------------------------------------------------
-   SEARCH SECTION
----------------------------------------------------- */
-.search-section {
-    background: #0B1620;
-    /* KEEPING YOUR ORIGINAL COLOR */
-    color: white;
-    padding: 70px 0;
-}
-
-/* Modern unified height & style */
-.modern-input {
-    background-color: #13212E;
-    color: white;
-    border: 1px solid #2C3A46;
-    height: 55px;
-    padding-left: 15px;
-    border-radius: 0.6rem;
-    transition: 0.3s;
-}
-
-/* Input focus glow */
-.modern-input:focus {
-    border-color: #D4B26A;
-    box-shadow: 0 0 0 0.15rem rgba(212, 178, 106, 0.3);
-}
-
-/* Placeholder color */
-.modern-input::placeholder {
-    color: #9ca8b6;
-}
-
-/* Listing cards */
-.listing-card {
-    transition: 0.3s ease;
-    border-radius: 0.8rem;
-}
-
-.listing-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-}
-
-.property-price {
-    font-weight: 700;
-}
-
-.property-details {
-    font-size: 0.95rem;
-}
-
-.gallery-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, .85);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.gallery-main {
-    display: contents;
-}
-
-.gallery-main img {
-    width: 60%;
-    max-height: 70vh;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.gallery-thumb-container {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-/* Default: thumbnails black & white */
-.gallery-thumb-container img {
-    width: 80px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-    cursor: pointer;
-    filter: grayscale(100%);
-    opacity: .7;
-    transition: .3s;
-}
-
-/* Active / Selected thumbnail */
-.gallery-thumb-container img.active-thumb {
-    filter: grayscale(0);
-    opacity: 1;
-    border: 2px solid #D4B26D;
-}
-
-
-.gallery-thumb-container img:hover {
-    opacity: 1;
-}
-
-.close-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-
-
-
-/* ----------------------------------------------------
-   ALLIANCE SECTION
----------------------------------------------------- */
-.alliance-section {
-    background: white;
-    padding: 70px 0;
-    position: relative;
-}
-
-.affi-logo-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.affi-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 500px;
-    white-space: nowrap;
-    will-change: transform;
-}
-
-.affi-logo img {
-    height: 8rem;
-    width: auto;
-    user-select: none;
-    pointer-events: none;
-}
-
-
-
-/* ----------------------------------------------------
-   CONTACT SECTION
----------------------------------------------------- */
-.contact-section {
-    background: #0B1620;
-    color: white;
-    padding: 70px 0;
-    position: relative;
-}
-
-/* Gold divider */
-.gold-line {
-    height: 5px;
-    width: 10px;
-    background: #D4B26D;
-    margin: 0 auto 25px;
-    border-radius: 2px;
-    transition: width 0.8s ease;
-}
-
-.gold-line.animate {
-    width: 360px;
-}
-
-/* Text */
-.contact-title {
-    font-size: 38px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.contact-subtext {
-    font-size: 17px;
-    opacity: 0.85;
-    margin-bottom: 28px;
-}
-
-
-/* ----------------------------------------------------
-   FOOTER
----------------------------------------------------- */
-.footer-brand {
-    gap: 18px;
-    padding: 6px 0;
-}
-
-.footer-logo {
-    width: 2rem;
-}
-
-@media (max-width: 1720px) {
-    .container-about {
-        position: relative;
-        background: #0B1620;
-        padding: 30px;
+    /* Listing Image */
+    .card-img-top {
+        aspect-ratio: 16 / 10;
     }
 }
 
-/* Tablets (max-width: 992px) */
-@media (max-width: 992px) {
-
-    .title,
-    .achieve-title {
-        font-size: 2.7rem;
-    }
-
-    .paragraph {
-        font-size: 1.2rem;
-    }
-
-    .button {
-        padding: 8px 30px;
-        font-size: 0.95rem;
-    }
-}
-
+/* --- Mobile Landscape/Smaller Tablet (Max 768px) --- */
 @media (max-width: 768px) {
 
-    .achieve-item-big .achieve-number {
-        font-size: 2.2rem;
-    }
-
-    .achieve-item-big .achieve-label {
-        font-size: 1.2rem;
-    }
-
-    .logo {
-        font-size: 2.5rem !important;
-    }
-
-    .achieve-icons {
-        justify-content: center !important;
-        gap: 20px;
-    }
-
-    .swiper {
-        padding: 40px 10px;
-    }
-
+    /* Typography */
+    .title,
     .achieve-title {
-        font-size: 2.5rem;
-    }
-
-    .title {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
     }
 
     .paragraph {
-        font-size: 1.1rem;
-        line-height: 1.6;
+        font-size: 1.15rem;
+    }
+
+    .paragraph-3 {
+        font-size: 0.8rem;
     }
 
     .button {
         padding: 8px 25px;
         font-size: 0.9rem;
     }
-}
 
-@media (max-width: 480px) {
-    .about-img {
-        margin-bottom: 2rem;
-    }
-
-    .achieve-item-big {
-        flex-direction: column;
-        text-align: center;
-    }
-
+    /* Achievements */
     .achieve-item-big .achieve-number {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .achieve-item-big .achieve-label {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .achieve-icons {
         justify-content: center !important;
-        gap: 20px;
+        flex-direction: column !important;
+        gap: 1.5rem;
     }
 
+    /* Swiper */
+    .swiper {
+        padding: 40px 10px;
+    }
+
+    /* About Section */
+    .about-section {
+        text-align: center;
+    }
+
+    .about-section .button {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    /* Mobile Gallery */
+    .gallery-thumb-container {
+        flex-wrap: wrap !important;
+        justify-content: center;
+        overflow: visible !important;
+        padding: 15px 10px;
+    }
+
+    .thumb {
+        width: 90px !important;
+        height: auto;
+    }
+}
+
+/* --- Mobile Portrait (Max 480px) --- */
+@media (max-width: 480px) {
+
+    /* Typography */
     .title,
     .achieve-title {
         font-size: 1.8rem;
@@ -622,86 +641,18 @@ body {
 
     .button {
         padding: 7px 20px;
-        font-size: 0.85rem;
-    }
-}
-
-/* Make images responsive */
-.card-img-top {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    aspect-ratio: 16 / 12;
-    /* maintains shape but scales */
-}
-
-/* Smaller screens */
-@media (max-width: 992px) {
-    .card-img-top {
-        aspect-ratio: 16 / 10;
-    }
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-    .card-img-top {
-        aspect-ratio: 16 / 9;
+        font-size: 0.8rem;
     }
 
-    .listing-card {
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 992px) {
-
-    .title,
-    .achieve-title {
-        font-size: 3rem;
+    /* About Section */
+    .about-img {
+        margin-bottom: 2rem;
     }
 
-    .paragraph {
-        font-size: 1.3rem;
-    }
-
-    .button {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .title,
-    .achieve-title {
-        font-size: 2.3rem;
-    }
-
-    .paragraph {
-        font-size: 1.15rem;
-    }
-
-    .achieve-item-big .achieve-number {
-        font-size: 2rem;
-    }
-
-    .achieve-item-big .achieve-label {
-        font-size: 1.1rem;
-    }
-
-    .button {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .title,
-    .achieve-title {
-        font-size: 1.8rem;
-    }
-
-    .paragraph {
-        font-size: 1rem;
+    /* Achievements */
+    .achieve-item-big {
+        flex-direction: column;
+        text-align: center;
     }
 
     .achieve-item-big .achieve-number {
@@ -712,94 +663,20 @@ body {
         font-size: 0.9rem;
     }
 
-    .button {
-        font-size: 0.8rem;
+    .achieve-icons {
+        gap: 20px;
     }
-}
 
-@media (max-width: 768px) {
-    .about-text .button {
-        display: block;
-        margin: 25px auto 0 auto;
-        text-align: center;
-        width: fit-content;
-    }
-}
-
-@media (max-width: 480px) {
     .achieve-item i.logo {
         font-size: 1.4rem !important;
     }
-}
 
-@media (max-width: 768px) {
-    .about-section {
-        text-align: center;
+    /* Listing Image */
+    .card-img-top {
+        aspect-ratio: 16 / 9;
     }
 
-    .about-section .button {
-        display: inline-block;
-        margin: 0 auto;
+    .listing-card {
+        margin-bottom: 20px;
     }
-
-    .paragraph-3 {
-        font-size: 0.8rem;
-    }
-
-    .achievement-section .achieve-icons {
-        flex-direction: column !important;
-        gap: 1.5rem;
-        /* spacing between items */
-    }
-
-    .achievement-section .achieve-item {
-        justify-content: center;
-    }
-
-    /* -------------------------
-   MOBILE-ONLY scroll + snap
--------------------------- */
-    @media (max-width: 768px) {
-        .gallery-thumb-container {
-            display: flex;
-            flex-wrap: nowrap;
-            /* keep one row */
-            gap: 10px;
-            overflow-x: auto;
-            /* enable horizontal scroll */
-            overflow-y: hidden;
-            padding: 10px 8px;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-            /* momentum scrolling */
-
-            /* snapping */
-            scroll-snap-type: x mandatory;
-            scroll-padding-left: 12px;
-        }
-
-        .gallery-thumb-container img {
-            width: 90px;
-            /* your fixed size */
-            height: 60px;
-            object-fit: cover;
-            border-radius: 6px;
-            cursor: pointer;
-            flex-shrink: 0;
-            /* ensures overflow so it scrolls */
-
-            /* snap alignment */
-            scroll-snap-align: center;
-            scroll-snap-stop: always;
-        }
-
-        /* optional small-phone size tweak */
-        @media (max-width: 480px) {
-            .gallery-thumb-container img {
-                width: 75px;
-                height: 56px;
-            }
-        }
-    }
-
 }

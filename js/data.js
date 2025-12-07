@@ -52,7 +52,7 @@ const listings = [{
         details: "3 Beds • 3 Baths • 2802 Sq Ft",
         folder: "asset/5/5",
         img: "/asset/5/33ad5ef137e710d5201426ba45c1dda9-o_a.webp",
-        type: "home",
+        type: "house",
         bedrooms: 3,
         baths: 3
     },
@@ -63,7 +63,7 @@ const listings = [{
         details: "3 Beds • 3 Baths • 2043 Sq Ft",
         folder: "asset/6/6",
         img: "/asset/6/ef05dbe9e5371832a9da302b4aa77f72-o_a.webp",
-        type: "home",
+        type: "house",
         bedrooms: 3,
         baths: 3
     },
@@ -85,7 +85,7 @@ const listings = [{
         details: "3 Beds • 2 Baths • 1264 Sq Ft",
         folder: "asset/house 8/8",
         img: "/asset/house 8/57d5bfea81d5eea4898a3f1dd1ad5225-o_a.png",
-        type: "home",
+        type: "house",
         bedrooms: 3,
         baths: 2
     },
