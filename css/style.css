@@ -1,6 +1,6 @@
-/* ----------------------------------------------------
+/* =====================================================================
    GLOBAL TYPOGRAPHY & COLORS
----------------------------------------------------- */
+===================================================================== */
 h1,
 h2,
 h3,
@@ -19,6 +19,7 @@ li {
     color: #0B1620;
 }
 
+/* Text utilities */
 .title {
     font-size: 4rem;
     font-weight: 500;
@@ -32,7 +33,7 @@ li {
     font-size: 1rem;
 }
 
-
+/* Buttons */
 .button {
     display: inline-block;
     padding: 10px 40px;
@@ -49,10 +50,7 @@ li {
     color: #0B1620;
 }
 
-.logo {
-    font-size: 3rem !important;
-}
-
+/* Colors */
 .blue-text {
     color: #0B1620;
 }
@@ -62,19 +60,23 @@ li {
 }
 
 .white-text {
-    color: white;
+    color: #fff;
 }
 
 .gold-text {
     color: #D4B26D;
 }
 
+/* Logo */
+.logo {
+    font-size: 3rem !important;
+}
 
 
 
-/* ----------------------------------------------------
+/* =====================================================================
    NAVBAR
----------------------------------------------------- */
+===================================================================== */
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -85,7 +87,7 @@ li {
 .navbar-logo {
     height: 3rem;
     margin-right: 10px;
-    transition: transform 0.3s ease;
+    transition: transform .3s ease;
 }
 
 .logo-link-text {
@@ -94,22 +96,17 @@ li {
     align-items: flex-start;
 }
 
+/* Gold line animation */
 .logo-line {
-    display: block;
     width: 50%;
     height: 2px;
     background-color: #D4B26D;
     margin: 2px 0;
-    transition: width 0.8s ease;
+    transition: width .8s ease;
 }
 
 .navbar-brand:hover .logo-line {
     width: 100%;
-}
-
-.logo-subtitle p {
-    margin: 0;
-    padding: 0;
 }
 
 /* Nav underline */
@@ -119,16 +116,19 @@ li {
     padding-bottom: 4px;
     color: #607D8B;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color .3s ease;
 }
 
 .nav-underline .nav-line {
-    display: block;
-    width: 0%;
+    width: 0;
     height: 2px;
-    background-color: #D4B26D;
+    background: #D4B26D;
     margin-top: 2px;
-    transition: width 0.3s ease;
+    transition: width .3s ease;
+}
+
+.nav-underline:hover .nav-line {
+    width: 50%;
 }
 
 .nav-underline.active {
@@ -139,31 +139,24 @@ li {
     width: 50% !important;
 }
 
-.nav-underline:hover {
-    color: #607D8B;
-}
-
-.nav-underline:hover .nav-line {
-    width: 50%;
-}
-
 .nav-underline.active:hover .nav-line {
     width: 100%;
 }
 
 
-/* ----------------------------------------------------
-   ABOUT SECTION (REVISED - CLEAN & PREMIUM)
----------------------------------------------------- */
+
+/* =====================================================================
+   ABOUT SECTION
+===================================================================== */
 .about-section {
     position: relative;
     overflow: visible !important;
 }
 
 .container-about {
-    position: relative;
     background: #0B1620;
-    padding: 50px 150px 50px 150px;
+    padding: 50px 150px;
+    position: relative;
 }
 
 /* Text */
@@ -172,13 +165,19 @@ li {
     padding-right: 120px;
 }
 
-/* Image overlap */
+/* Image + frame */
+.image-container {
+    position: relative;
+}
+
 .about-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
     position: relative;
     z-index: 2;
+    transition: .4s ease;
 }
 
 .gold-frame {
@@ -192,14 +191,6 @@ li {
     transition: .4s ease;
 }
 
-.about-img {
-    border-radius: 10px;
-    position: relative;
-    z-index: 2;
-    transition: .4s ease;
-}
-
-/* Hover depth effect */
 .image-container:hover .about-img {
     transform: scale(1.04);
 }
@@ -209,47 +200,30 @@ li {
     left: -30px;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 992px) {
-    .container-about {
-        padding: 0 20px;
-    }
-
-    .image-container {
-        margin-bottom: 35px;
-    }
-}
 
 
-
-/* ----------------------------------------------------
+/* =====================================================================
    ACHIEVEMENT SECTION
----------------------------------------------------- */
+===================================================================== */
 .achievement-section {
     background: #f7f7f7;
     padding: 70px 0;
 }
 
-/* Swiper */
+/* Swiper container */
 .swiper {
     width: 100%;
     max-width: 1200px;
     margin: auto;
     padding-bottom: 60px;
-    overflow: hidden;
-}
-
-.swiper-wrapper {
-    width: 100%;
 }
 
 .swiper-slide {
-    width: 100% !important;
+    text-align: center;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    text-align: center;
 }
 
 /* Title */
@@ -259,21 +233,21 @@ li {
     margin-bottom: 20px;
 }
 
-/* Paragraph */
+/* Description */
 .swiper-slide p {
     max-width: 800px;
     margin: 0 auto 10px;
     line-height: 1.7;
 }
 
-/* Pagination */
+/* Pagination bullets */
 .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
     background: #c7c7c7;
     border-radius: 50%;
     margin: 0 5px !important;
-    transition: 0.3s ease;
+    transition: .3s ease;
 }
 
 .swiper-pagination-bullet-active {
@@ -283,6 +257,7 @@ li {
     background: #b38b37;
 }
 
+/* Big stats */
 .achieve-item-big .achieve-number {
     font-size: 3rem;
     font-weight: 1000;
@@ -298,47 +273,50 @@ li {
     gap: 40px;
 }
 
-/* ----------------------------------------------------
+
+
+/* =====================================================================
    SEARCH SECTION
----------------------------------------------------- */
+===================================================================== */
 .search-section {
     background: #0B1620;
-    /* KEEPING YOUR ORIGINAL COLOR */
     color: white;
     padding: 70px 0;
 }
 
-/* Modern unified height & style */
+/* Input */
 .modern-input {
     background-color: #13212E;
-    color: white;
     border: 1px solid #2C3A46;
+    color: white;
     height: 55px;
     padding-left: 15px;
-    border-radius: 0.6rem;
-    transition: 0.3s;
+    border-radius: .6rem;
+    transition: .3s;
 }
 
-/* Input focus glow */
 .modern-input:focus {
     border-color: #D4B26A;
-    box-shadow: 0 0 0 0.15rem rgba(212, 178, 106, 0.3);
+    box-shadow: 0 0 0 .15rem rgba(212, 178, 106, 0.3);
 }
 
-/* Placeholder color */
 .modern-input::placeholder {
     color: #9ca8b6;
 }
 
-/* Listing cards */
+/* Cards */
 .listing-card {
-    transition: 0.3s ease;
-    border-radius: 0.8rem;
+    transition: .3s ease;
+    border-radius: .8rem;
 }
 
 .listing-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .25);
+}
+
+.card-img-top {
+    height: 380px;
 }
 
 .property-price {
@@ -346,29 +324,26 @@ li {
 }
 
 .property-details {
-    font-size: 0.95rem;
+    font-size: .95rem;
 }
 
+/* Gallery modal */
 .gallery-modal {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, .85);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     z-index: 9999;
-}
-
-.gallery-main {
-    display: contents;
 }
 
 .gallery-main img {
     width: 60%;
     max-height: 70vh;
-    object-fit: cover;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .gallery-thumb-container {
@@ -376,10 +351,8 @@ li {
     gap: 10px;
     margin-top: 20px;
     overflow-x: auto;
-    padding-bottom: 10px;
 }
 
-/* Default: thumbnails black & white */
 .gallery-thumb-container img {
     width: 80px;
     height: 60px;
@@ -391,16 +364,10 @@ li {
     transition: .3s;
 }
 
-/* Active / Selected thumbnail */
 .gallery-thumb-container img.active-thumb {
     filter: grayscale(0);
     opacity: 1;
     border: 2px solid #D4B26D;
-}
-
-
-.gallery-thumb-container img:hover {
-    opacity: 1;
 }
 
 .close-modal {
@@ -412,30 +379,23 @@ li {
     cursor: pointer;
 }
 
-.card-img-top {
-    height: 380px;
-}
 
 
-
-/* ----------------------------------------------------
+/* =====================================================================
    ALLIANCE SECTION
----------------------------------------------------- */
+===================================================================== */
 .alliance-section {
-    background: white;
+    background: #fff;
     padding: 70px 0;
-    position: relative;
 }
 
 .affi-logo-wrapper {
-    width: 100%;
     overflow: hidden;
-    position: relative;
+    width: 100%;
 }
 
 .affi-logo {
     display: inline-flex;
-    align-items: center;
     gap: 500px;
     white-space: nowrap;
     will-change: transform;
@@ -443,21 +403,18 @@ li {
 
 .affi-logo img {
     height: 8rem;
-    width: auto;
     user-select: none;
-    pointer-events: none;
 }
 
 
 
-/* ----------------------------------------------------
+/* =====================================================================
    CONTACT SECTION
----------------------------------------------------- */
+===================================================================== */
 .contact-section {
     background: #0B1620;
     color: white;
     padding: 70px 0;
-    position: relative;
 }
 
 /* Gold divider */
@@ -467,7 +424,7 @@ li {
     background: #D4B26D;
     margin: 0 auto 25px;
     border-radius: 2px;
-    transition: width 0.8s ease;
+    transition: width .8s ease;
 }
 
 .gold-line.animate {
@@ -478,19 +435,18 @@ li {
 .contact-title {
     font-size: 38px;
     font-weight: 500;
-    margin-bottom: 12px;
 }
 
 .contact-subtext {
     font-size: 17px;
-    opacity: 0.85;
-    margin-bottom: 28px;
+    opacity: .85;
 }
 
 
-/* ----------------------------------------------------
+
+/* =====================================================================
    FOOTER
----------------------------------------------------- */
+===================================================================== */
 .footer-brand {
     gap: 18px;
     padding: 6px 0;
@@ -500,19 +456,20 @@ li {
     width: 5rem;
 }
 
+
+
+/* =====================================================================
+   RESPONSIVE
+===================================================================== */
+
+/* Tablet Large */
 @media (max-width: 1720px) {
     .container-about {
-        position: relative;
-        background: #0B1620;
         padding: 30px;
-    }
-
-    .image-container {
-        padding-right: 4rem;
     }
 }
 
-/* Tablets (max-width: 992px) */
+/* Tablets */
 @media (max-width: 992px) {
 
     .title,
@@ -526,13 +483,32 @@ li {
 
     .button {
         padding: 8px 30px;
-        font-size: 0.95rem;
+        font-size: .95rem;
+    }
+
+    .container-about {
+        padding: 20px;
+    }
+
+    /* About image frame */
+    .about-img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .gold-frame {
+        width: 50%;
+        height: 100%;
+        top: -20px;
+        left: 60px;
     }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-    .image-container {
-        padding-bottom: 4rem;
+
+    .logo {
+        font-size: 2.5rem !important;
     }
 
     .achieve-item-big .achieve-number {
@@ -543,45 +519,29 @@ li {
         font-size: 1.2rem;
     }
 
-    .logo {
-        font-size: 2.5rem !important;
-    }
-
     .achieve-icons {
-        justify-content: center !important;
-        gap: 20px;
+        gap: 20px !important;
     }
 
-    .swiper {
-        padding: 40px 10px;
-    }
-
+    .title,
     .achieve-title {
-        font-size: 2.5rem;
-    }
-
-    .title {
         font-size: 2.2rem;
     }
 
     .paragraph {
         font-size: 1.1rem;
-        line-height: 1.6;
     }
 
     .button {
         padding: 8px 25px;
-        font-size: 0.9rem;
+        font-size: .9rem;
     }
 }
 
+/* Small mobile */
 @media (max-width: 480px) {
-    .about-img {
-        margin-bottom: 2rem;
-    }
 
     .achieve-item-big {
-        flex-direction: column;
         text-align: center;
     }
 
@@ -591,11 +551,6 @@ li {
 
     .achieve-item-big .achieve-label {
         font-size: 1rem;
-    }
-
-    .achieve-icons {
-        justify-content: center !important;
-        gap: 20px;
     }
 
     .title,
@@ -609,6 +564,6 @@ li {
 
     .button {
         padding: 7px 20px;
-        font-size: 0.85rem;
+        font-size: .85rem;
     }
 }
