@@ -646,3 +646,67 @@ li {
         margin-bottom: 20px;
     }
 }
+
+@media (max-width: 992px) {
+
+    .title,
+    .achieve-title {
+        font-size: 3rem;
+    }
+
+    .paragraph {
+        font-size: 1.3rem;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .title,
+    .achieve-title {
+        font-size: 2.3rem;
+    }
+
+    .paragraph {
+        font-size: 1.15rem;
+    }
+
+    .achieve-item-big .achieve-number {
+        font-size: 2rem;
+    }
+
+    .achieve-item-big .achieve-label {
+        font-size: 1.1rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .title,
+    .achieve-title {
+        font-size: 1.8rem;
+    }
+
+    .paragraph {
+        font-size: 1rem;
+    }
+
+    .achieve-item-big .achieve-number {
+        font-size: 1.6rem;
+    }
+
+    .achieve-item-big .achieve-label {
+        font-size: 0.9rem;
+    }
+
+    .button {
+        font-size: 0.8rem;
+    }
+}
