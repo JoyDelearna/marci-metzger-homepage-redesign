@@ -33,7 +33,8 @@ body {
     font-size: 1.5rem;
 }
 
-.paragraph-2 {
+.paragraph-2,
+.paragraph-3 {
     font-size: 1rem;
 }
 
@@ -516,7 +517,7 @@ body {
 }
 
 .footer-logo {
-    width: 5rem;
+    width: 2rem;
 }
 
 @media (max-width: 1720px) {
@@ -725,15 +726,80 @@ body {
     }
 }
 
-/* Mobile fix for .logo ONLY inside achievement items */
-@media (max-width: 480px) {
-    .achieve-item i.logo {
-        font-size: 1.6rem !important;
-    }
-}
-
 @media (max-width: 480px) {
     .achieve-item i.logo {
         font-size: 1.4rem !important;
     }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        text-align: center;
+    }
+
+    .about-section .button {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .paragraph-3 {
+        font-size: 0.8rem;
+    }
+
+    .achievement-section .achieve-icons {
+        flex-direction: column !important;
+        gap: 1.5rem;
+        /* spacing between items */
+    }
+
+    .achievement-section .achieve-item {
+        justify-content: center;
+    }
+
+    /* -------------------------
+   MOBILE-ONLY scroll + snap
+-------------------------- */
+    @media (max-width: 768px) {
+        .gallery-thumb-container {
+            display: flex;
+            flex-wrap: nowrap;
+            /* keep one row */
+            gap: 10px;
+            overflow-x: auto;
+            /* enable horizontal scroll */
+            overflow-y: hidden;
+            padding: 10px 8px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            /* momentum scrolling */
+
+            /* snapping */
+            scroll-snap-type: x mandatory;
+            scroll-padding-left: 12px;
+        }
+
+        .gallery-thumb-container img {
+            width: 90px;
+            /* your fixed size */
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            flex-shrink: 0;
+            /* ensures overflow so it scrolls */
+
+            /* snap alignment */
+            scroll-snap-align: center;
+            scroll-snap-stop: always;
+        }
+
+        /* optional small-phone size tweak */
+        @media (max-width: 480px) {
+            .gallery-thumb-container img {
+                width: 75px;
+                height: 56px;
+            }
+        }
+    }
+
 }

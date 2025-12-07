@@ -261,7 +261,7 @@ function initAffiScroll() {
     track.dataset.duplicated = "true";
   }
 
-  let speed = 0.6; // adjust for faster/slower
+  let speed = 1.2; // adjust for faster/slower
   let pos = 0;
   let rafID = null;
   let lastTime = null;
